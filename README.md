@@ -65,9 +65,7 @@ PCB-Defect-Detection-and-Classification-System/
 │   ├── css/style.css        # Frontend styling
 │   ├── js/script.js         # Frontend logic
 │   └── images/bg.jpg        # Background image
-│
-├── Dataset                  # Modified Data To Train Model.
-│
+││
 ├── PCB DATASET              # Dataset From Kaggle
 │
 ├── templates/
