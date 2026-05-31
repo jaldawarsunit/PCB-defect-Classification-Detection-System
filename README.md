@@ -45,6 +45,7 @@ The model classifies defects into 6 categories:
 
 
 ## Project Structure
+```text
 
 PCB-Defect-Detection-and-Classification-System/
 │
@@ -65,13 +66,15 @@ PCB-Defect-Detection-and-Classification-System/
 │   ├── css/style.css        # Frontend styling
 │   ├── js/script.js         # Frontend logic
 │   └── images/bg.jpg        # Background image
-││
+│
 ├── PCB DATASET              # Dataset From Kaggle
 │
 ├── templates/
 │   └── index.html           # Main web interface
 │
 └──pcb_defect_model.pth.     # Tranined Model
+
+```
 
 ## How It Works
 
