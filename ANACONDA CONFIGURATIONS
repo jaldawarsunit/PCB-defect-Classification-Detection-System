@@ -1,0 +1,10 @@
+CONDA CREATE -N PCB_ENV PYTHON=3.11
+
+CONDA ACTIVATE PCB_ENV
+
+pip install -r requirement.txt
+
+
+PORT RELEASING:
+lsof -i :5000
+kill -9 3293 3299

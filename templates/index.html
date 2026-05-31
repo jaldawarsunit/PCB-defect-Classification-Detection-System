@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PCB Project</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>PCB_PROJECT</h2>
+    <div class="nav-links">
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('prediction')">Prediction</button>
+    </div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="section active">
+
+    <div class="home-card">
+
+        <h1>PCB Defect Detection System</h1>
+
+        <p>
+            Detect and classify defects in Printed Circuit Boards using 
+            advanced image processing and deep learning techniques.
+        </p>
+
+        <button onclick="showSection('prediction')">
+            Get Started
+        </button>
+
+    </div>
+
+</div>
+
+<!-- PREDICTION -->
+<div id="prediction" class="section">
+
+    <h2>Final Prediction</h2>
+
+    <div class="card big-card">
+
+        <form id="predictForm">
+
+            <div class="upload-grid">
+
+                <div class="upload-box">
+                    <label>Template Image</label>
+                    <input type="file" name="template" required>
+                </div>
+
+                <div class="upload-box">
+                    <label>Test Image</label>
+                    <input type="file" name="test" required>
+                </div>
+
+            </div>
+
+            <button type="submit">Run Prediction</button>
+
+        </form>
+
+    </div>
+
+    <div class="result-card single">
+        <h3>Final Output</h3>
+        <img id="finalResult">
+    </div>
+
+    <div id="downloadCard" class="download-card" style="display: none;">
+        <a href="/download">
+            <button>Download Result</button>
+        </a>
+        <a href="/download_csv">
+            <button class="csv-btn">Download Prediction Log (CSV)</button>
+        </a>
+    </div>
+
+    <!-- PREDICTION LOG TABLE -->
+    <div id="logCard" class="log-card" style="display: none;">
+        <h3>Prediction Log</h3>
+        <table id="logTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Defect Label</th>
+                    <th>Confidence</th>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>Width</th>
+                    <th>Height</th>
+                </tr>
+            </thead>
+            <tbody id="logBody">
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="/static/js/script.js"></script>
+
+</body>
+</html>
