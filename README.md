@@ -19,8 +19,6 @@ in under 3 seconds. Results are displayed on a Flask web interface with
 annotated bounding boxes, an on-screen prediction log table, and options
 to download the result image and CSV log.
 
----
-
 ## Defect Categories
 
 The model classifies defects into 6 categories:
@@ -32,28 +30,25 @@ The model classifies defects into 6 categories:
 5. Spur
 6. Spurious Copper
 
----
-
 ## Tech Stack
 
-| Area | Tools / Libraries |
-|---|---|
-| Image Processing | OpenCV, NumPy |
-| Deep Learning | PyTorch, TorchVision |
-| Model | EfficientNet-B0 (Transfer Learning) |
-| Dataset | DeepPCB |
-| Frontend | HTML, CSS, JavaScript |
-| Backend | Python, Flask |
-| Evaluation | Accuracy, Loss, Confusion Matrix |
-| Export | CSV, Annotated Image |
+| Area             | Tools / Libraries                                     |
+|------------------|-------------------------------------------------------|
+| Image Processing | OpenCV, NumPy                                         |
+| Deep Learning.   | PyTorch, TorchVision                                  |
+| Model            | EfficientNet-B0 (Transfer Learning)                   |
+| Dataset          | DeepPCB                                               |
+| Frontend         | HTML, CSS, JavaScript                                 |
+| Backend          | Python, Flask                                         |
+| Evaluation       | Accuracy, Loss, Confusion Matrix                      |
+| Export           | CSV, Annotated Image                                  |
 
----
 
 ## Project Structure
 
 PCB-Defect-Detection-and-Classification-System/
 │
-├── app1.py                  # Flask backend - main application
+├── app.py                   # Flask backend - main application
 │
 ├── scripts/
 │   ├── predict_defects1.py  # Core prediction pipeline
@@ -71,10 +66,14 @@ PCB-Defect-Detection-and-Classification-System/
 │   ├── js/script.js         # Frontend logic
 │   └── images/bg.jpg        # Background image
 │
-└── templates/
-└── index.html           # Main web interface
-
----
+├── Dataset                  # Modified Data To Train Model.
+│
+├── PCB DATASET              # Dataset From Kaggle
+│
+├── templates/
+│   └── index.html           # Main web interface
+│
+└──pcb_defect_model.pth.     # Tranined Model
 
 ## How It Works
 
@@ -85,21 +84,17 @@ PCB-Defect-Detection-and-Classification-System/
 5. Each ROI is classified by **EfficientNet-B0** into one of 6 defect categories
 6. Annotated output image and prediction log are returned to the user
 
----
-
 ## Model
 
-| Parameter | Value |
-|---|---|
-| Architecture | EfficientNet-B0 |
-| Optimizer | Adam |
+| Parameter     | Value              |
+|---------------|--------------------|
+| Architecture  | EfficientNet-B0    |
+| Optimizer     | Adam               |
 | Loss Function | Cross-Entropy Loss |
-| Input Size | 128×128 |
-| Test Accuracy | Above 95% |
-| Dropout | 0.4 |
-| Classes | 6 |
-
----
+| Input Size    | 128×128            |
+| Test Accuracy | Above 95%          |
+| Dropout       | 0.4                |
+| Classes       | 6                  |
 
 ## Features
 
@@ -110,39 +105,44 @@ PCB-Defect-Detection-and-Classification-System/
 - Download annotated result image (JPG)
 - Download prediction log as CSV file
 
----
-
 ## Installation and Usage
 
 ### 1. Clone the repository
-```bash
-git clone https://github.com/tejapulaparthi/PCB-Defect-Detection-and-Classification-System.git
+``` bash
+git clone https://github.com/jaldawarsunit/PCB-defect-Classification-Detection-System.git
 cd PCB-Defect-Detection-and-Classification-System
 ```
 
 ### 2. Install dependencies
-```bash
+``` bash
 pip install -r requirement.txt
 ```
 
 ### 3. Run the application
-```bash
-python app1.py
+``` bash
+python app.py
 ```
 
 ### 4. Open in browser
 http://localhost:5000
 
----
-
 ## Dataset
+
+While Selecting: Template: 
+1. Go To PCB_dataset -> PCB_USED -> 01.jpg
+similar to 10 images.
+
+While Selecting: Raw Image:
+1. Go To PCB_dataset -> images -> Missing_hole -> 01_missing_hole_01.jpg
+
+warning: template first number should be match with defects stating number;
+warning: best tranined Model Is Share, This Model Is Tranined On Mac M2
+         similar to 10 images.
+
 
 This project uses the **DeepPCB Dataset** which contains paired template
 and test PCB images annotated with 6 defect categories.
 
----
-
 ## Author
-
-**Tejaswini**
+**Sunit Jaldawar**
 PCB Defect Detection and Classification System

@@ -1,10 +1,19 @@
+# CONDA CMD
 CONDA CREATE -N PCB_ENV PYTHON=3.11
-
 CONDA ACTIVATE PCB_ENV
 
 pip install -r requirement.txt
 
 
-PORT RELEASING:
+# PORT RELEASING:
 lsof -i :5000
 kill -9 3293 3299
+
+# GIT PUSH CMDS
+git init
+git brach -m main
+git status
+git add .
+git commit -m "Initial commit for PCB defect detection system"
+git remote add origin https://github.com/jaldawarsunit/PCB-defect-Classification-Detection-System.git
+git push -u origin main
